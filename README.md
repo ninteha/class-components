@@ -1,69 +1,89 @@
-# React + TypeScript + Vite
+# Pokemon Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React class components application that allows users to search for Pokemon using the PokeAPI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search Pokemon by name
+- Display Pokemon details
+- Error handling with Error Boundaries
+- Loading states
+- Responsive design
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Install dependencies:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Start the development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm run dev
 ```
+
+1. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## Testing
+
+Run tests:
+
+```bash
+npm test
+```
+
+Run tests with coverage:
+
+```bash
+npm run test:coverage
+```
+
+Watch mode for development:
+
+```bash
+npm run test:watch
+```
+
+## Code Quality
+
+Run linting:
+
+```bash
+npm run lint
+```
+
+Format code:
+
+```bash
+npm run format:fix
+```
+
+## Project Structure
+
+- `src/components/` - React components
+  - `error-boundary.tsx` - Error handling component
+  - `pokemon-item.tsx` - Individual Pokemon display
+  - `results.tsx` - Search results display
+  - `search-bar.tsx` - Search input component
+- `src/services/` - API integration
+- `src/types/` - TypeScript type definitions
+- `src/__tests__/` - Test files
+
+## Error Handling
+
+The application includes comprehensive error handling:
+
+- API errors are displayed to the user
+- UI errors are caught by ErrorBoundary
+- Console logging for debugging
+- Fallback UI for recovery
+
+## Contributing
+
+1. Fork the repository
+1. Create your feature branch
+1. Commit your changes
+1. Push to the branch
+1. Create a Pull Request
